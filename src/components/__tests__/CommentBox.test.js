@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
-
+import Root from 'Root';
 import CommentBox from 'components/CommentBox';
 
 // remember to unmount when using mount
@@ -8,7 +8,11 @@ import CommentBox from 'components/CommentBox';
 let wrapper;
 
 beforeEach(() => {
-    wrapper = mount(<CommentBox />);
+    wrapper = mount(
+        <Root>
+            <CommentBox />
+        </Root>
+    );
 });
 
 afterEach(() => {
